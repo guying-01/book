@@ -1,0 +1,29 @@
+page-home {
+  .card .row .button{
+    color: #02cab7!important;
+  }
+  .card .row .col{
+    align-self: center;
+    padding: 0;
+  }
+  .card .note{
+    margin-top: 10px;
+    display: block;
+  }
+  .col{
+    padding: 0!important;
+  }
+  .grid{
+    padding: 0;
+  }
+  [col-1] .button{
+    background-color: transparent;
+  }
+  [col-1] .icon{
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 0;
+    color: #999;
+    margin-top: 0.2rem;
+  }
+}

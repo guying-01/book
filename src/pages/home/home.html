@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar placeholder="搜索小说名" showCancelButton="false" cancelButtonText="取消" (ionInput)="onInput($event)" [(ngModel)]="keywords"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card  *ngFor="let item of searchData">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="http://111.231.54.181/static/uploads/headface/{{item['upload_time']}}/{{item['url']}}">
+      </ion-avatar>
+      <h2>{{item['user']}}</h2>
+      <p>{{item['time'] | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+    </ion-item>
+
+    <ion-card-content>
+      <p>{{item['comment']}}</p>
+      <ion-note (tap)="goToDetail(item['book_id'])">
+        {{item['book']}}
+      </ion-note>
+
+    </ion-card-content>
+
+    <!--<ion-row>-->
+      <!--<ion-col>-->
+        <!--<button ion-button icon-left clear small (click)="like()">-->
+          <!--<ion-icon name="thumbs-up"></ion-icon>-->
+          <!--<div>12</div>-->
+        <!--</button>-->
+      <!--</ion-col>-->
+      <!--<ion-col>-->
+        <!--<button ion-button icon-left clear small (click)="goToCommentPage()">-->
+          <!--<ion-icon name="text"></ion-icon>-->
+          <!--<div>{{item['vote_num']}}</div>-->
+        <!--</button>-->
+      <!--</ion-col>-->
+
+    <!--</ion-row>-->
+
+  </ion-card>
+
+  <div  *ngIf="searchData.length == 0">
+    <p text-center>抱歉，未搜索到相关内容</p>
+  </div>
+</ion-content>

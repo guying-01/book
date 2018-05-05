@@ -1,0 +1,27 @@
+<!--
+  Generated template for the ArticlePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title [innerHTML]="book"></ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addBookMark()">
+        <ion-icon name="bookmark" color="secondary"></ion-icon>
+      </button>
+      <button ion-button (click)="showModal()">
+        <ion-icon name="share" color="secondary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="content" class="{{className}}">
+  <p>当前章节:<span [innerHTML]="chapters"></span></p>
+  <div [innerHTML]="content" (swipe)="swipeEvent($event)"></div>
+</ion-content>
